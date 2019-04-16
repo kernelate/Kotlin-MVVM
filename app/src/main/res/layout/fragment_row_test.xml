@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="ranaguinaldo.citynavigation.viewmodel.CityViewModel" />
+    </data>
+
+
+    <RelativeLayout
+                    android:id="@+id/child_relative1"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="10dp"
+        >
+
+            <ImageView
+                    android:id="@+id/device_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    app:mutableBanner="@{viewModel.getCityBanner()}"
+                    app:mutableVisibility="@{viewModel.getImageViewVisibility()}"
+                    android:background="@drawable/bg_bt_circle"
+                    android:scaleType="fitCenter"
+            />
+
+            <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:mutableName="@{viewModel.getCityName()}"
+                    app:mutableColor="@{viewModel.getCityColor()}"
+                    android:textSize="@dimen/mg_15"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_bt_circle"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:mutableVisibility="@{viewModel.getTextViewVisibility()}"
+            />
+
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/mg_10"
+            >
+
+                <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:mutableText="@{viewModel.getCityName()}"
+                        android:textSize="@dimen/mg_15"
+                />
+
+                <TextView
+                        android:id="@+id/subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:mutableText="@{viewModel.getCitySubtitle()}"
+                        android:layout_below="@+id/title"
+                        android:textColor="@color/gray_99"
+                        android:textSize="@dimen/mg_12"
+
+                />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_70"/>
+
+    </RelativeLayout>
+
+
+</layout>

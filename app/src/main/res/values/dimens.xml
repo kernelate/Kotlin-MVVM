@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="line_dip">1px</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="toolbar_ac_left_margin">50dp</dimen>
+    <dimen name="toolbar_ac_text_size">16sp</dimen>
+    <dimen name="mg_15">15dp</dimen>
+    <dimen name="mg_12">12dp</dimen>
+    <dimen name="mg_10">10dp</dimen>
+    <dimen name="mg_5">5dp</dimen>
+</resources>

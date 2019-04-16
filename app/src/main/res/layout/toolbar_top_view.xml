@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="viewModel"
+                type="ranaguinaldo.citynavigation.MainActivity.SearchViewModel"/>
+    </data>
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+            <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:theme="@style/ToolBarStyle"
+                    android:background="@color/white"
+                    app:contentInsetStartWithNavigation="20dp"
+                    app:titleTextColor="@color/line"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_city"
+                        android:gravity="center"
+                        android:textColor="@color/line"
+                        android:drawableLeft="@drawable/nav_icon"
+                        android:textStyle="bold"
+                />
+
+                <EditText
+                        android:id="@+id/searchCity"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Search for a city"
+                        android:drawablePadding="5dp"
+                        android:drawableTint="@color/drawable_hint"
+                        style="@style/Widget.AppCompat.AutoCompleteTextView"
+                        android:textColor="@color/line"
+                        android:textSize="@dimen/toolbar_ac_text_size"
+                        android:gravity="left"
+                        android:text="@={viewModel.query"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/search_icon"
+                        android:visibility="gone"
+                />
+
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <!--<View-->
+        <!--android:id="@+id/toolbar_line"-->
+        <!--style="@style/line_normal"-->
+        <!--android:layout_marginTop="@dimen/toolbar_height"/>-->
+
+    </FrameLayout>
+
+</layout>
